@@ -96,6 +96,7 @@
     function gen1Button(btnInfo){
         let btn = document.createElement("button");
         btn.textContent = btnInfo.text;
+        console.log(btn.textContent)
         btn.style = "font-size:2vw; white-space: pre-line;"
         btn.className = "option_button"
         btn.addEventListener("click", function () {

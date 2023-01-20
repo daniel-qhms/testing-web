@@ -1,3 +1,4 @@
+var debuglog = true
 var speed_i = 0;
 var speed = 25;
 var print_message = '';
@@ -40,23 +41,24 @@ function genButtons(btnArray){
 function gen1Button(btnInfo){
     let btn = document.createElement("button");
     btn.textContent = btnInfo.message;
+    console.log('11111')
+    console.log(btn.textContent)
     btn.style = "font-size:2vw; white-space: pre-line;"
     btn.className = "option_button"
     btn.addEventListener("click", function () {
         pressbtn(btnInfo.target)
     });
     document.querySelector('.btn-group').appendChild(btn);
-    var br = document.createElement("br");
-    var br2 = document.createElement("br");
-    document.querySelector('.btn-group').appendChild(br);
-    document.querySelector('.btn-group').appendChild(br2);
+    // var br = document.createElement("br");
+    // var br2 = document.createElement("br");
+    //document.querySelector('.btn-group').appendChild(br);
+    //document.querySelector('.btn-group').appendChild(br2);
 }
 function clearButtons(){
     document.querySelector('.btn-group').innerHTML = "";
 }
 
 // Below code related to reading game content
-var debuglog = true
 function trimStr(str) {
 	return str.trim();
 }
