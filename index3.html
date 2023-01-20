@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <script src="test2.js" charset="UTF-8" type="text/javascript"></script>
+    <style>
+        body {
+          font-family: 'Noto Sans HK', sans-serif;
+          background-image:url(img/paper.png);
+        }
+        .option_button {
+        background-color: #222;
+        border-radius: 4px;
+        border-style: none;
+        /* box-sizing: border-box; */
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin: 0;
+        max-width: none;
+        min-height: 44px;
+        min-width: 10px;
+        outline: none;
+        overflow: hidden;
+        padding: 9px 20px 8px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+        }
+
+        .option_button:hover,
+        .option_button:focus {
+        opacity: .75;
+        }
+    </style>
+</head>
+<body>
+    <p style="font-size:3vw; white-space: pre-line;"  id="p1">Press Start</p>
+    <div class="btn-group">
+        <button style = "font-size:2vw" class="option_button" onclick="startBtn()">開始</button>
+    </div>
+        <!-- 
+        **0 = ID
+        ^^message1  = message
+        &&button1++1 = button
+        &&button2++2 = button 
+        // Comment
+        Only message can use new line directly. button can use \n to next line
+        First ID = 0
+        -->
+    <textarea style="display:none" id="game_source">
+            **0
+            ^^id0 message line1中文
+            id0 message line2
+            id0 message line3
+            &&button to 1中文 \r\n next line ++1
+            // test comment
+            **1
+            ^^id1 message line1
+            &&button to 0++0
+            &&button to 2++2
+            **2
+            ^^id2 message line1
+            &&button to 0++0
+    </textarea>
+</body>
+</html>
+
