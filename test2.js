@@ -40,9 +40,7 @@ function genButtons(btnArray){
 }
 function gen1Button(btnInfo){
     let btn = document.createElement("button");
-    btn.textContent = btnInfo.message;
-    console.log('11111')
-    console.log(btn.textContent)
+    btn.textContent = btnInfo.message.replace(/\\n/g,'\n');
     btn.style = "font-size:2vw; white-space: pre-line;"
     btn.className = "option_button"
     btn.addEventListener("click", function () {
