@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <script src="test.js" charset="UTF-8" type="text/javascript"></script>
+    <style>
+        body {
+          font-family: 'Noto Sans HK', sans-serif;
+          background-image:url(img/paper.png);
+        }
+        .option_button {
+        background-color: #222;
+        border-radius: 4px;
+        border-style: none;
+        /* box-sizing: border-box; */
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin: 0;
+        max-width: none;
+        min-height: 44px;
+        min-width: 10px;
+        outline: none;
+        overflow: hidden;
+        padding: 9px 20px 8px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+        }
+
+        .option_button:hover,
+        .option_button:focus {
+        opacity: .75;
+        }
+    </style>
+</head>
+<body>
+    <p style="font-size:3vw; white-space: pre-line;"  id="p1">Press Start</p>
+    <div class="btn-group">
+        <button style = "font-size:2vw" class="option_button" onclick="startBtn()">開始</button>
+        <br>
+        <br>
+        <button style = "font-size:2vw" class="option_button" onclick="startBtn()">開始2</button>
+    </div>
+</body>
+<script>
+    var speed_i = 0;
+    var speed = 25;
+    var txt = '';
+    var tempButtonsArray = null
+    let beat = new Audio('type.wav');
+    function startBtn(){
+        beat.play()
+        pressbtn('0')
+    }
+    function pressbtn(target_id){
+        clearp1();
+        clearButtons();
+        target_scene = findsceneById(target_id);
+        id = target_id
+        resetTypeWriter(target_scene.message);
+        tempButtonsArray = target_scene.buttons
+        typeWriter();
+    }
+    function clearp1(){
+        document.getElementById("p1").innerHTML="";
+    }
+    function resetTypeWriter(text){
+        speed_i = 0;
+        txt=text
+    }
+    function typeWriter() {
+        if (speed_i < txt.length) {
+            document.getElementById("p1").innerHTML += txt.charAt(speed_i);
+            speed_i++;
+            setTimeout(typeWriter, speed);
+        }
+        else{
+            genButtons(target_scene.buttons)
+        }
+    }
+    function genButtons(btnArray){
+        btnArray.forEach(element=>gen1Button(element))
+    }
+    function gen1Button(btnInfo){
+        let btn = document.createElement("button");
+        btn.textContent = btnInfo.text;
+        btn.style = "font-size:2vw; white-space: pre-line;"
+        btn.className = "option_button"
+        btn.addEventListener("click", function () {
+            pressbtn(btnInfo.target)
+        });
+        document.querySelector('.btn-group').appendChild(btn);
+        var br = document.createElement("br");
+        var br2 = document.createElement("br");
+        document.querySelector('.btn-group').appendChild(br);
+        document.querySelector('.btn-group').appendChild(br2);
+    }
+    function clearButtons(){
+        document.querySelector('.btn-group').innerHTML = "";
+    }
+</script>
+</html>
+

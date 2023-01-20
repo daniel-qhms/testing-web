@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CYOAwesome by @McFunkypants</title>
+	<meta name="description" content="CYOAwesome by @McFunkypants">
+	<meta name="author" content="McFunkypants">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Special+Elite" >
+	<link rel="stylesheet" href="CYOAwesome.css">
+	<link rel="stylesheet" href="libs/animate.css">
+	<style>
+	</style>
+</head>
+<body>
+
+<textarea id="game_source">
+	ROOM
+
+	中文中文
+	- description of choice 1 [SCENE1]
+	- description of choice 2 [SCENE2]
+	
+	SCENE1
+	
+	[has key?] You escaped! Congratulations.
+	[else] The door is locked. 
+	
+	SCENE2
+	
+	[get key] You now have [key] key[s].
+</textarea>
+
+<div id='game' onclick='hurryup()'>
+	<div id='story_so_far'></div>
+	<div id='current_scene'></div>
+	<div id='current_choices'></div>
+	<div id='swingmeter'>
+		<div id='swingtoolow'></div>
+		<div id='swinggoodlow'></div>
+		<div id='swingsweetlow'></div>
+		<div id='swingsweetest'></div>
+		<div id='swingsweethigh'></div>
+		<div id='swinggoodhigh'></div>
+		<div id='swingtext'>SWING METER</div>
+		<div id='swingpower'></div>
+	</div>
+</div>
+
+<script src="CYOAwesome.js"></script>
+</body>
+</html>

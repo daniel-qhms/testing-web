@@ -1,0 +1,38 @@
+{
+  "scenes" : {
+    "scene0": {
+      "id": "0",
+      "message": "id0 message",
+      "buttons": [
+        {
+          "text": "To id 1",
+          "target": "1"
+        }
+      ]
+    },
+    "scene1": {
+      "id": "1",
+      "message": "id1 message",
+      "buttons": [
+        {
+          "text": "to id 0",
+          "target": "0"
+        },
+        {
+          "text": "to id 2",
+          "target": "2"
+        }
+      ]
+    },
+    "scene2": {
+      "id": "2",
+      "message": "id2 message",
+      "buttons": [
+        {
+          "text": "to id 0",
+          "target": "0"
+        }
+      ]
+    }
+  }
+}
